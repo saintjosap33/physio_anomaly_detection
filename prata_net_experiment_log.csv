@@ -1,0 +1,9 @@
+Version,Epochs,Accuracy,Precision,Recall,F1,ROC_AUC,PR_AUC,Normal_Mean,Normal_Std,Normal_Max,Anomaly_Mean,Anomaly_Std,Anomaly_Max,Overlap_Below_Normal_Mean,Anomaly_Below_Threshold,Final_Loss,Notes
+V3,60,0.700742,0.827778,0.506959,0.628813,0.761659,0.815969,,,,,,,,,,Baseline. Transformer attention + residual temporal encoder + frequency domain learning + dynamic thresholding
+V4,60,0.707702,0.836929,0.515929,0.638347,0.761025,0.818655,,,,,,,,0.395026,Realistic anomaly generation + contrastive latent learning (NT-Xent) + temporal transformer encoder. No improvement over V3
+V5_100ep,100,0.781472,0.852987,0.680173,0.756840,0.828657,0.879184,0.8826,0.6153,5.5555,26.5873,43.0249,265.6945,0.2530,0.3740,0.406155,Harder anomalies + Mahalanobis latent scoring + 100 epochs. Big jump from V4
+V5_120ep,120,0.788432,0.864116,0.684504,0.763894,0.838381,0.886915,0.7545,0.3325,3.3874,26.4027,43.5502,264.7671,0.2094,0.3566,0.355090,BEST MODEL. Same as V5 100ep with 20 more epochs
+V6_100ep,100,0.501856,1.000000,0.003712,0.007396,0.467153,0.572800,379.4695,8.7654,403.1587,347.2264,79.0679,536.8476,0.4760,0.8620,0.453616,Adversarial anomaly training destroyed latent space. Scoring inverted - normals scored higher than anomalies
+V7_120ep,120,,,,,,,,,,,,,,,,Normalized ensemble scoring (z-score per component + max combo). Worse than V5 120ep
+V5_150ep,150,0.781627,0.842680,0.692546,0.760272,0.831626,0.880083,,,,,,,,,,Loss spike at epoch 60 (cosine restart). Worse than 120ep. 120 is sweet spot
+V5_120ep_run2,120,0.777761,0.851605,0.672750,0.751685,0.825470,0.875142,0.9174,0.7062,5.9086,26.1256,43.1974,267.4179,0.2561,0.3916,0.377283,Second run of V5 120ep. Worse due to random init variance. Confirms 0.84 ceiling for V5

@@ -15,6 +15,7 @@ import { DetailedAnalytics } from "@/pages/DetailedAnalytics";
 import { History } from "@/pages/History";
 import { About } from "@/pages/About";
 import NotFound from "@/pages/not-found";
+import WatchAnomalyDetector from "@/pages/WatchAnomalyDetector";
 
 const queryClient = new QueryClient();
 
@@ -22,6 +23,7 @@ function Router() {
   return (
     <Layout>
       <Switch>
+        <Route path="/" component={WatchAnomalyDetector} />
         <Route path="/" component={DashboardLive} />
         <Route path="/analytics" component={DetailedAnalytics} />
         <Route path="/history" component={History} />

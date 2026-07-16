@@ -8,7 +8,7 @@ export function About() {
         <div className="w-20 h-20 mx-auto rounded-3xl bg-gradient-to-tr from-primary to-secondary flex items-center justify-center shadow-2xl shadow-primary/30">
           <Watch className="w-10 h-10 text-white" />
         </div>
-        <h1 className="text-4xl md:text-5xl font-display font-bold tracking-tight">Aegis Health System</h1>
+        <h1 className="text-4xl md:text-5xl font-display font-bold tracking-tight">Anomaly Health System</h1>
         <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
           Next-generation vital monitoring and AI predictive analytics powered by advanced wearable sensor technology.
         </p>

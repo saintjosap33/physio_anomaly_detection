@@ -38,7 +38,7 @@ SEQ_LEN = 20
 # LOAD FEATURES
 # ============================================================
 
-X = np.load(os.path.join(BASE_DIR, "features.npy"))
+X = np.load(os.path.join(BASE_DIR, "features_upgraded.npy"))
 
 X = np.nan_to_num(X)
 
